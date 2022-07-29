@@ -1,0 +1,216 @@
+create table Vehicle
+(
+  Vid int,
+  Vname varchar(10) not null,
+  Price varchar(10) not null,
+  Disc varchar(30),
+  primary key (Vid)
+); 
+
+insert into Vehicle
+values (1,'Activa',80000,'Two wheeler.Sturdy.Milage 30 km');
+insert into Vehicle
+values (2,'Santro',800000,'Product of Hyandai');
+insert into Vehicle
+values (3,'Motor Bike',100000,'Sturdy and good milage');
+
+alter table Vehicle
+modify Disc varchar(70);
+
+
+insert into Vehicle
+values (1,'Activa',80000,'Two wheeler.Sturdy.Milage 30 km');
+
+
+mysql> select * from Vehicle;
++-----+------------+--------+---------------------------------+
+| Vid | Vname      | Price  | Disc                            |
++-----+------------+--------+---------------------------------+
+|   1 | Activa     | 80000  | Two wheeler.Sturdy.Milage 30 km |
+|   2 | Santro     | 800000 | Product of Hyandai              |
+|   3 | Motor Bike | 100000 | Sturdy and good milage          |
++-----+------------+--------+---------------------------------+
+
+
+create table Customer
+(
+  Custid int,
+  Custname varchar(20) not null,
+  Address varchar(20) default 'Nagpur',
+  primary key(Custid)
+
+);
+insert into Customer
+values(1,'Nilima','Pimpari');
+insert into Customer
+values(2,'Ganesh','Pune');
+insert into Customer
+values(3,'Pankaj','Mumbai');
+
+mysql> select * from Customer;
++--------+----------+---------+
+| Custid | Custname | Address |
++--------+----------+---------+
+|      1 | Nilima   | Pimpari |
+|      2 | Ganesh   | Pune    |
+|      3 | Pankaj   | Mumbai  |
++--------+----------+---------+
+
+create table Saleman
+(
+   Sid int,
+   Sname varchar(15) not null,
+   Address varchar(20) default 'Delhi',
+   primary key(Sid)
+);
+
+insert into Saleman
+values(10,'Rajesh','mumbai');
+insert into Saleman
+values(11,'seema','Pune');
+insert into Saleman
+values(13,'Rakhi','pune');
+
+mysql> select * from Saleman;
++-----+--------+---------+
+| Sid | Sname  | Address |
++-----+--------+---------+
+|  10 | Rajesh | mumbai  |
+|  11 | seema  | Pune    |
+|  13 | Rakhi  | pune    |
++-----+--------+---------+
+
+mysql> select Sid from Saleman;
++-----+
+| Sid |
++-----+
+|  10 |
+|  11 |
+|  13 |
++-----+
+
+
+
+
+create table cust_vehicle
+(
+   Custid int,
+   Vid int,
+  Sid varchar(5),
+  Buy_price varchar(10)
+ );
+
+
+insert into cust_vehicle
+values(1,1,10,75000);
+insert into cust_vehicle
+values(1,2,10,790000);
+insert into cust_vehicle
+values(2,3,11,80000);
+insert into cust_vehicle
+values(3,3,11,75000);
+insert into cust_vehicle
+values(3,2,10,80000);
+
+
+
+mysql> select * from cust_vehicle;
++--------+------+------+-----------+
+| Custid | Vid  | Sid  | Buy_price |
++--------+------+------+-----------+
+|      1 |    1 | 10   | 75000     |
+|      1 |    2 | 10   | 790000    |
+|      2 |    3 | 11   | 80000     |
+|      3 |    3 | 11   | 75000     |
+|      3 |    2 | 10   | 80000     |
++--------+------+------+-----------+
+
+
+
+1)
+
+select Sname from Saleman
+ where Address='Pune';
+2)
+
+delete from Customer
+where Address='Pimpari';
+3)
+
+select Disc from Vehicle
+where Vname='Motor Bike';
+
++------------------------+
+| Disc                   |
++------------------------+
+| Sturdy and good milage |
++------------------------+
+
+4)
+update cust_vehicle 
+set Buy_price = 80000
+where Buy_price=75000;
+
+5)
+
+alter table cust_vehicle
+add column rating int;
+
+
+6)
+
+update cust_vehicle
+set rating=5
+where Buy_price>90000; 
+
+mysql> select * from cust_vehicle;
++--------+------+------+-----------+--------+
+| Custid | Vid  | Sid  | Buy_price | rating |
++--------+------+------+-----------+--------+
+|      1 |    1 | 10   | 80000     |   NULL |
+|      1 |    2 | 10   | 790000    |      5 |
+|      2 |    3 | 11   | 80000     |   NULL |
+|      3 |    3 | 11   | 80000     |   NULL |
+|      3 |    2 | 10   | 80000     |   NULL |
++--------+------+------+-----------+--------+
+
+7)
+
+truncate table Customer;
+
+
+mysql> select * from Customer;
+Empty set (0.00 sec)
+
+mysql> describe table Customer;
++----+-------------+----------+------------+------+---------------+------+---------+------+------+----------+-------+
+| id | select_type | table    | partitions | type | possible_keys | key  | key_len | ref  | rows | filtered | Extra |
++----+-------------+----------+------------+------+---------------+------+---------+------+------+----------+-------+
+|  1 | SIMPLE      | Customer | NULL       | ALL  | NULL          | NULL | NULL    | NULL |    1 |   100.00 | NULL  |
++----+-------------+----------+------------+------+---------------+------+---------+------+------+----------+-------+
+1 row in set, 1 warning (0.00 sec)
+
+
+
+8)
+
+drop table Saleman;
+
+mysql> show tables;
++--------------------+
+| Tables_in_knowitdb |
++--------------------+
+| bonus              |
+| book               |
+| cust_vehicle       |
+| customer           |
+| dept               |
+| dummy              |
+| emp                |
+| salesman           |
+| salgrade           |
+| student            |
+| vehicle            |
++--------------------+
+
+

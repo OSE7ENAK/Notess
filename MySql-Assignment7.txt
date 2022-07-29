@@ -1,0 +1,54 @@
+1. Create following tables and solve thequeries.
+   room(roomid,rname,rloc)
+
+   CREATE TABLE room(
+   rid number primary key,
+   rname varchar2(15) not null,
+   rloc varchar2(20));
+
+   faculty
+   fid fname   spskill1   spskill2
+   10   Amol   database   JAVA
+   11   Asha   JAVA       MySQL
+   12   Kiran  CPP        Database
+   13   Seeta  MySQL      database
+
+   courses
+   cid cname rid fid
+   121 DBDA 100 10
+   131 DAC 101
+   141 DTISS
+   151 DIOT 105 12
+
+    INSERT courses values(121,'DBDA',100, 10);
+    INSERT courses (cid, cname, rid) values(131,'DAC',101);
+    INSERT courses (cid, cname) values(141,'DTISS');
+    INSERT courses values(151,'DIOT',105, 12);
+
+Room
+roomid rname rloc
+100 jasmin 1st floor
+101 Rose 2nd floor
+105 Lotus 1st floor
+103 Mogra 1st floor
+
+
+INSERT room values(100,'Jasmin','1st floor');
+INSERT room values(101,'Rose','2nd floor');
+INSERT room values(105,'Lotus','1st floor');
+INSERT room values(103,'Mogra','1st floor');
+
+1. list all courses for which no room is assigned and all rooms which are available
+
+2. list all faculties who are not allocated to any course and rooms which are not allocated to any course
+ 
+3. list all rooms which are allocated or not allocated to any courses
+
+
+4. list all rooms which are not allocated to any courses
+
+
+5. display courses and faculty assigned to those courses whose special skill is database
+
+
+6. display time table --- it should contain course details , faculty and room details

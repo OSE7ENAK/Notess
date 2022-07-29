@@ -1,0 +1,145 @@
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| knowitdb           |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+5 rows in set (0.00 sec)
+
+mysql> use knowitdb;
+Database changed
+mysql> show tables;
+Empty set (0.01 sec)
+
+mysql> create table student
+    -> (
+    -> roll int,
+    -> name varchar(10),
+    -> grade varchar(1)
+    -> );
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> insert into student
+    -> values(1,'Rajesh','B');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into student
+    -> values(2,'Rajani','C');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into student
+    -> values(1,'Suresh','D');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into student
+    -> values(4,'Ramesh','F');
+Query OK, 1 row affected (0.01 sec)
+
+
+mysql> select * from  student;
++------+--------+-------+
+| roll | name   | grade |
++------+--------+-------+
+|    1 | Rajesh | B     |
+|    2 | Rajani | C     |
+|    1 | Suresh | D     |
+|    4 | Ramesh | F     |
++------+--------+-------+
+4 rows in set (0.00 sec)
+
+mysql> select name,grade from  student;
++--------+-------+
+| name   | grade |
++--------+-------+
+| Rajesh | B     |
+| Rajani | C     |
+| Suresh | D     |
+| Ramesh | F     |
++--------+-------+
+4 rows in set (0.00 sec)
+
+mysql> insert into student(roll,grade)
+    -> values(15,'A');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into student(roll,name)
+    -> values(69,'mallesh');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select * from student;
++------+---------+-------+
+| roll | name    | grade |
++------+---------+-------+
+|    1 | Rajesh  | B     |
+|    2 | Rajani  | C     |
+|    1 | Suresh  | D     |
+|    4 | Ramesh  | F     |
+|   15 | NULL    | A     |
+|   69 | mallesh | NULL  |
++------+---------+-------+
+6 rows in set (0.00 sec)
+
+mysql> create table knowit
+    -> (
+    -> PRN int ,
+    -> name varchar(10),
+    -> Course varchar(5)
+    -> );
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> show tables;
++--------------------+
+| Tables_in_knowitdb |
++--------------------+
+| knowit             |
+| student            |
++--------------------+
+2 rows in set (0.00 sec)
+
+mysql> insert into knowit
+    -> values(89,'zaid','DAC');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into knowit
+    -> values(90,'Shaibaz','DAC');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into knowit
+    -> values(91,'Wajid','DAC');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into knowit
+    -> values(01,'Aquib','DAC');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select * from knowit;
++------+---------+--------+
+| PRN  | name    | Course |
++------+---------+--------+
+|   89 | zaid    | DAC    |
+|   90 | Shaibaz | DAC    |
+|   91 | Wajid   | DAC    |
+|    1 | Aquib   | DAC    |
++------+---------+--------+
+4 rows in set (0.00 sec)
+
+mysql> select name,grade from student;
++---------+-------+
+| name    | grade |
++---------+-------+
+| Rajesh  | B     |
+| Rajani  | C     |
+| Suresh  | D     |
+| Ramesh  | F     |
+| NULL    | A     |
+| mallesh | NULL  |
++---------+-------+
+6 rows in set (0.00 sec)
+
+mysql> insert into knowit
+    -> values(84,'Rohit','DAC');
+Query OK, 1 row affected (0.01 sec)

@@ -1,0 +1,293 @@
+1)
+
+select ename,deptno ,concat(ename,',',deptno) "Emp info" from emp;
+
++--------+--------+-----------+
+| ename  | deptno | Emp info  |
++--------+--------+-----------+
+| SMITH  |     20 | SMITH,20  |
+| ALLEN  |     30 | ALLEN,30  |
+| WARD   |     30 | WARD,30   |
+| JONES  |     20 | JONES,20  |
+| MARTIN |     30 | MARTIN,30 |
+| BLAKE  |     30 | BLAKE,30  |
+| CLARK  |     10 | CLARK,10  |
+| SCOTT  |     20 | SCOTT,20  |
+| KING   |     10 | KING,10   |
+| TURNER |     30 | TURNER,30 |
+| ADAMS  |     20 | ADAMS,20  |
+| JAMES  |     30 | JAMES,30  |
+| FORD   |     20 | FORD,20   |
+| MILLER |     10 | MILLER,10 |
++--------+--------+-----------+
+14 rows in set (0.01 sec)
+
+
+2)
+
+
+select * from emp
+where  mgr is not null;
+
+| EMPNO | ENAME  | JOB      | MGR  | HIREDATE   | SAL     | COMM    | DEPTNO |
++-------+--------+----------+------+------------+---------+---------+--------+
+|  7369 | SMITH  | CLERK    | 7902 | 1980-12-17 |  800.00 |    NULL |     20 |
+|  7499 | ALLEN  | SALESMAN | 7698 | 1981-02-20 | 1600.00 |  300.00 |     30 |
+|  7521 | WARD   | SALESMAN | 7698 | 1981-02-22 | 1250.00 |  500.00 |     30 |
+|  7566 | JONES  | MANAGER  | 7839 | 1981-04-02 | 2975.00 |    NULL |     20 |
+|  7654 | MARTIN | SALESMAN | 7698 | 1981-09-28 | 1250.00 | 1400.00 |     30 |
+|  7698 | BLAKE  | MANAGER  | 7839 | 1981-05-01 | 2850.00 |    NULL |     30 |
+|  7782 | CLARK  | MANAGER  | 7839 | 1981-06-09 | 2450.00 |    NULL |     10 |
+|  7788 | SCOTT  | ANALYST  | 7566 | 1982-12-09 | 3000.00 |    NULL |     20 |
+|  7844 | TURNER | SALESMAN | 7698 | 1981-09-08 | 1500.00 |    0.00 |     30 |
+|  7876 | ADAMS  | CLERK    | 7788 | 1983-01-12 | 1100.00 |    NULL |     20 |
+|  7900 | JAMES  | CLERK    | 7698 | 1981-12-03 |  950.00 |    NULL |     30 |
+|  7902 | FORD   | ANALYST  | 7566 | 1981-12-03 | 3000.00 |    NULL |     20 |
+|  7934 | MILLER | CLERK    | 7782 | 1982-01-23 | 1300.00 |    NULL |     10 |
++-------+--------+----------+------+------------+---------+---------+--------+
+13 rows in set (0.00 sec)
+
+
+3)
+
+select ename,deptno,hiredate from emp
+where hiredate between '1981-01-01' and '1983-03-31'
+order by hiredate;
+
++--------+--------+------------+
+| ename  | deptno | hiredate   |
++--------+--------+------------+
+| ALLEN  |     30 | 1981-02-20 |
+| WARD   |     30 | 1981-02-22 |
+| JONES  |     20 | 1981-04-02 |
+| BLAKE  |     30 | 1981-05-01 |
+| CLARK  |     10 | 1981-06-09 |
+| TURNER |     30 | 1981-09-08 |
+| MARTIN |     30 | 1981-09-28 |
+| KING   |     10 | 1981-11-17 |
+| JAMES  |     30 | 1981-12-03 |
+| FORD   |     20 | 1981-12-03 |
+| MILLER |     10 | 1982-01-23 |
+| SCOTT  |     20 | 1982-12-09 |
+| ADAMS  |     20 | 1983-01-12 |
++--------+--------+------------+
+13 rows in set (0.00 sec)
+
+
+4)
+
+
+ 
+select ename,concat(substr(ename,2,5),substr(job,2,4),'@mycompany.com') from emp;
+
+
++--------+------------------------------------------------------------+
+| ename  | concat(substr(ename,2,5),substr(job,2,4),'@mycompany.com') |
++--------+------------------------------------------------------------+
+| SMITH  | MITHLERK@mycompany.com                                     |
+| ALLEN  | LLENALES@mycompany.com                                     |
+| WARD   | ARDALES@mycompany.com                                      |
+| JONES  | ONESANAG@mycompany.com                                     |
+| MARTIN | ARTINALES@mycompany.com                                    |
+| BLAKE  | LAKEANAG@mycompany.com                                     |
+| CLARK  | LARKANAG@mycompany.com                                     |
+| SCOTT  | COTTNALY@mycompany.com                                     |
+| KING   | INGRESI@mycompany.com                                      |
+| TURNER | URNERALES@mycompany.com                                    |
+| ADAMS  | DAMSLERK@mycompany.com                                     |
+| JAMES  | AMESLERK@mycompany.com                                     |
+| FORD   | ORDNALY@mycompany.com                                      |
+| MILLER | ILLERLERK@mycompany.com                                    |
++--------+------------------------------------------------------------+
+14 rows in set (0.00 sec)
+
+
+5)
+
+
+  select * from emp
+  where hiredate between '1981-01-01-' and '1983-01-01';
+  
+  
++-------+--------+-----------+------+------------+---------+---------+--------+
+| EMPNO | ENAME  | JOB       | MGR  | HIREDATE   | SAL     | COMM    | DEPTNO |
++-------+--------+-----------+------+------------+---------+---------+--------+
+|  7499 | ALLEN  | SALESMAN  | 7698 | 1981-02-20 | 1600.00 |  300.00 |     30 |
+|  7521 | WARD   | SALESMAN  | 7698 | 1981-02-22 | 1250.00 |  500.00 |     30 |
+|  7566 | JONES  | MANAGER   | 7839 | 1981-04-02 | 2975.00 |    NULL |     20 |
+|  7654 | MARTIN | SALESMAN  | 7698 | 1981-09-28 | 1250.00 | 1400.00 |     30 |
+|  7698 | BLAKE  | MANAGER   | 7839 | 1981-05-01 | 2850.00 |    NULL |     30 |
+|  7782 | CLARK  | MANAGER   | 7839 | 1981-06-09 | 2450.00 |    NULL |     10 |
+|  7788 | SCOTT  | ANALYST   | 7566 | 1982-12-09 | 3000.00 |    NULL |     20 |
+|  7839 | KING   | PRESIDENT | NULL | 1981-11-17 | 5000.00 |    NULL |     10 |
+|  7844 | TURNER | SALESMAN  | 7698 | 1981-09-08 | 1500.00 |    0.00 |     30 |
+|  7900 | JAMES  | CLERK     | 7698 | 1981-12-03 |  950.00 |    NULL |     30 |
+|  7902 | FORD   | ANALYST   | 7566 | 1981-12-03 | 3000.00 |    NULL |     20 |
+|  7934 | MILLER | CLERK     | 7782 | 1982-01-23 | 1300.00 |    NULL |     10 |
++-------+--------+-----------+------+------------+---------+---------+--------+
+12 rows in set, 14 warnings (0.03 sec)
+
+
+
+6)
+
+
+  create table course 
+(
+     cid int,
+     cname varchar(10),
+     primary key(cid)
+ );
+
+   
+create table trainer
+(
+    tid int,
+    tname varchar(30),
+    cid int,
+   primary key(tid),
+   foreign key(cid) references course(cid)
+
+);
+
+insert into course
+values(10,'C');
+insert into course
+values(12,'C++'); 
+insert into course
+values(14,'JAVA'); 
+insert into course
+values(16,'PYTHON'); 
+insert into course
+values(18,'DBT'); 
+ 
+
+insert into trainer
+values(512,'Ramesh',10);
+insert into trainer
+values(411,'Suresh',18); 
+insert into trainer
+values(603,'Hamish',12); 
+insert into trainer
+values(110,'Dinesh',10); 
+insert into trainer
+values(115,'Onkar',18); 
+ 
+delete from course;
+
+7)
+
+
+delete from emp40
+where deptno in(30,20);
+  
+  
+8)
+
+ select empno as empnumber,ename as empname,deptno as deptnumber,job as title from emp;  
+
++-----------+---------+------------+-----------+
+| empnumber | empname | deptnumber | title     |
++-----------+---------+------------+-----------+
+|      7369 | SMITH   |         20 | CLERK     |
+|      7499 | ALLEN   |         30 | SALESMAN  |
+|      7521 | WARD    |         30 | SALESMAN  |
+|      7566 | JONES   |         20 | MANAGER   |
+|      7654 | MARTIN  |         30 | SALESMAN  |
+|      7698 | BLAKE   |         30 | MANAGER   |
+|      7782 | CLARK   |         10 | MANAGER   |
+|      7788 | SCOTT   |         20 | ANALYST   |
+|      7839 | KING    |         10 | PRESIDENT |
+|      7844 | TURNER  |         30 | SALESMAN  |
+|      7876 | ADAMS   |         20 | CLERK     |
+|      7900 | JAMES   |         30 | CLERK     |
+|      7902 | FORD    |         20 | ANALYST   |
+|      7934 | MILLER  |         10 | CLERK     |
++-----------+---------+------------+-----------+
+14 rows in set (0.00 sec)
+
+
+9)
+
+update emp40
+set job='manager',mgr=7777
+where deptno=20;
+
+10)
+
+select ename,date_format(hiredate,'%d/%m/%y') from emp40;
++--------+----------------------------------+
+| ename  | date_format(hiredate,'%d/%m/%y') |
++--------+----------------------------------+
+| CLARK  | 09/06/81                         |
+| KING   | 17/11/81                         |
+| MILLER | 23/01/82                         |
++--------+----------------------------------+
+
+or
+
+select ename,date_format(hiredate,'%d-%m-%y') from emp40;
++--------+----------------------------------+
+| ename  | date_format(hiredate,'%d-%m-%y') |
++--------+----------------------------------+
+| CLARK  | 09-06-81                         |
+| KING   | 17-11-81                         |
+| MILLER | 23-01-82                         |
++--------+----------------------------------+
+
+or
+
+
+select ename,date_format(hiredate,'%D/%M/%Y') from emp40;
++--------+----------------------------------+
+| ename  | date_format(hiredate,'%D/%M/%Y') |
++--------+----------------------------------+
+| CLARK  | 9th/June/1981                    |
+| KING   | 17th/November/1981               |
+| MILLER | 23rd/January/1982                |
++--------+----------------------------------+
+
+
+
+
+11)
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+  
+
+
+
+
+
+
+   
+
+
+
+
+
+
+
+

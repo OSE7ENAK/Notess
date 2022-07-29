@@ -1,0 +1,96 @@
+Q1. Try all commands done in classroom session.
+
+     1) Create Dtabase
+      2)show databses===show the list of databases
+     3)USe Database
+     4)Create Table
+     5)insert Table
+     6)select table==== show the particular containt of table
+     7)show tables==show the list of all tables in database
+   
+     
+
+
+Q2. For the following schema create appropriate
+    tables.
+    
+    1. book(bookid,bkname,price)
+
+       *********commands*************
+
+        1)  Create Table
+        ----->  create table book ///commands
+                (
+                bookid int,
+                bname varchar(15),
+                price int,
+                );
+       2)Insert Into Table
+         ---->  insert into book
+                values(1,'Aman',5000);
+                insert into book
+                values(2,'Shri',500);/////it can be added upto our choice
+
+       3)Show the Contents of Table
+          ----->   select * from book;   //command 
+
+             ****table shows like that*******
+               +--------+-------+-------+
+               | bookid | bname | price |
+               +--------+-------+-------+
+               |      1 | Aman  |  5000 |
+               |      2 | Shri  |   500 |
+               +--------+-------+-------+
+         
+     
+       
+
+
+
+
+
+
+
+
+    2. salesman(id,name,area,totalsale)
+       here totalsale is the sale done by the 
+       salesman in a current month.
+
+
+
+
+         *******commnads************
+
+
+        1)  Create Table
+        ----->  create table salesman ///commands
+                (
+                 id int,
+                 name varchar(15),
+                 area varchar(30),
+                 totalsale int
+                );
+       2)Insert Into Table
+         ---->  insert into salesman
+                values(100,'Shivam',600);
+                insert into salesman
+                values(200,'Devashish',10000);       
+                insert into salesman
+                values(300,'Viru','lucknow',3000);   /////it can be added upto our choice
+
+
+       3)Show the Contents of Table
+          ----->   select * from salesman;   //command 
+          
+                      ****table shows like that*******
+
+                   +------+-----------+---------+-----------+
+                   | id   | name      | area    | totalsale |
+                   +------+-----------+---------+-----------+
+                   |  100 | shivam    | solapur |       600 |
+                   |  200 | Devashish | akola   |     10000 |
+                   |  300 | Viru      | lucknow |      3000 |
+                   +------+-----------+---------+-----------+
+
+
+

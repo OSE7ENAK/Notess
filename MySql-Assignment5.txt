@@ -1,0 +1,22 @@
+1. Calculate Total salary for all employees in emp table.
+   Total sal = (sa1+20%+comm). Commission should be considered 0 if table has a null value.
+2. Display list all employees whose name ends with ER.
+3. Display all employees whose job start with C and ends with K.
+4. Display all rows where comm is null.
+5. Display all employees where comm is null and name starts with ‘S’.
+6. Display all employees where job contains 5 characters.
+7. Display all employees whose name contain ‘A’ at 1 position and job contains 5 characters.
+8. Display empno, name and department number of an emp working under manager with id 7698.
+9. Display the details of the employee , whose names start with ‘A’ and end with ‘S’ or whose names contains N as the second or third character, and ending with either ‘N’    or ‘S’.
+10. Display all employees who earn sal more that smith earns.
+11. Display all employees who are working in smith's department
+12. Display all employees who earn salary < Scott and salary > Adams sal.
+13. Display all employees with salary > either Smith's salary or alan's sal
+14. Display all employees who earn more than average sal of dept 10.
+15. Display all employees who are working in purchase department.
+16. Display deptno, salary sum and min(sum) for all employees who are managers.
+17. Find sum(sal) for each dept having more than 2 analyst.
+18. Calculate how many employees earn sal more than 1500 in each dept.
+19. Display ename,sal and grade of employee(use salgrade table).
+
+

@@ -1,0 +1,9 @@
+Q1. Try all commands done in classroom session.
+
+Q2. For the following schema create appropriate
+    tables.
+    
+    1. book(bookid,bkname,price)
+    2. salesman(id,name,area,totalsale)
+       here totalsale is the sale done by the 
+       salesman in a current month.
